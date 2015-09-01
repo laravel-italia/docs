@@ -22,6 +22,7 @@
     - [Facade](/documentazione/5.1/facade)
 - Servizi
     - [Autenticazione](/documentazione/5.1/autenticazione)
+    - [Autorizzazioni](/documentazione/5.1/autorizzazioni)
     - [Artisan CLI](/documentazione/5.1/artisan)
     - [Pagamenti](/documentazione/5.1/pagamenti)
     - [Cache](/documentazione/5.1/cache)
