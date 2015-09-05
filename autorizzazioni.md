@@ -16,9 +16,9 @@
 <a name="introduzione"></a>
 ## Introduzione
 
-In aggiunta all'ottimo meccanismo di [autenticazione](/documentazione/5.1/autenticazione) già presente nel framework, Larael offre un comodo sistema di organizzazione delle logiche di autorizzazione per accedere alle risorse della tua applicazione. Sono disponibili, infatti, svariati metodi ed helper dedicati a tale scopo ed in questo capitolo della guida vedremo come usarli.
+In aggiunta all'ottimo meccanismo di [autenticazione](/autenticazione) già presente nel framework, Larael offre un comodo sistema di organizzazione delle logiche di autorizzazione per accedere alle risorse della tua applicazione. Sono disponibili, infatti, svariati metodi ed helper dedicati a tale scopo ed in questo capitolo della guida vedremo come usarli.
 
-> **Nota:** il sistema di Authorization è stato aggiunto a partire da Laravel 5.1.11. Per maggiori informazioni fai riferimento alla [guida all'aggiornamento](/documentazione/5.1/aggiornamento).
+> **Nota:** il sistema di Authorization è stato aggiunto a partire da Laravel 5.1.11. Per maggiori informazioni fai riferimento alla [guida all'aggiornamento](/aggiornamento).
 
 <a name="definire-abilita"></a>
 ## Definire le "Abilità"
@@ -56,7 +56,7 @@ Se ci fai caso, non abbiamo controllato se l'utente corrente è uguale a `NULL`.
 
 #### Abilità Specificate in una Classe
 
-In aggiunta alla registrazione di `Closure` come quella appena vista, puoi registrare dei metodi usando una convenzione che già conosci: `NomeClasse@nomeMetodo`. Il resto del lavoro verrà svolto dal [service container](/documentazione/5.1/container):
+In aggiunta alla registrazione di `Closure` come quella appena vista, puoi registrare dei metodi usando una convenzione che già conosci: `NomeClasse@nomeMetodo`. Il resto del lavoro verrà svolto dal [service container](/container):
 
     $gate->define('update-post', 'Class@method');
 
@@ -66,7 +66,7 @@ In aggiunta alla registrazione di `Closure` come quella appena vista, puoi regis
 <a name="tramite-gate-facade"></a>
 ### Tramite la Facade Gate
 
-Una volta definita un'abilità, effettuare il controllo è molto semplice e può essere svolto in molti modi. Innanzitutto, puoi usare i metodi `allows` o `denies` della [facade](/documentazione/5.1/facade) `Gate`. Non ci sarà bisogno di passare anche l'istanza dell'utente attuale come parametro, in quanto verrà preso in considerazione quello "corrente" del sistema di autenticazione. L'utente "già loggato", insomma.
+Una volta definita un'abilità, effettuare il controllo è molto semplice e può essere svolto in molti modi. Innanzitutto, puoi usare i metodi `allows` o `denies` della [facade](/facade) `Gate`. Non ci sarà bisogno di passare anche l'istanza dell'utente attuale come parametro, in quanto verrà preso in considerazione quello "corrente" del sistema di autenticazione. L'utente "già loggato", insomma.
 
 Tutto quello che dovremo fare quindi sarà passare l'istanza della classe `Post`.
 
@@ -185,7 +185,7 @@ Puoi inoltre combinare un `@can` con un `@else`.
 <a name="nelle-form-request"></a>
 ### Nelle Form Request
 
-Puoi anche scegliere di usare la facade `Gate` nel metodo `authorize` di una [form request](/documentazione/5.1/validazione#validazione-form-request). Guarda l'esempio seguente, che fa uso del risultato ritornato dal metodo `Gate::allows()`.
+Puoi anche scegliere di usare la facade `Gate` nel metodo `authorize` di una [form request](/validazione#validazione-form-request). Guarda l'esempio seguente, che fa uso del risultato ritornato dal metodo `Gate::allows()`.
 
     /**
      * Determine if the user is authorized to make this request.
@@ -265,7 +265,7 @@ Una volta che la policy è stata generata e registrata, puoi procedere con l'agg
 
 Nulla ti vieta di continuare con altri metodi, in base alle necessità: prova ad aggiungere dei metodi `show`, `destroy`, `addComment` e così via!
 
-> **Nota:** tutte le policy vengono risolte tramite il [service container](/documentazione/5.1/container), il che vuol dire che puoi effettuare senza problemi il type-hint delle eventuali dipendenze. Che verranno automaticamente iniettate.
+> **Nota:** tutte le policy vengono risolte tramite il [service container](/container), il che vuol dire che puoi effettuare senza problemi il type-hint delle eventuali dipendenze. Che verranno automaticamente iniettate.
 
 <a name="controllare-policy"></a>
 ### Controllare una Policy
