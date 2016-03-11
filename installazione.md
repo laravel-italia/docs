@@ -32,7 +32,7 @@ Laravel utilizza [Composer](http://getcomposer.org) per gestire le sue dipendenz
 
 Per prima cosa, scarica Laravel installer usando Composer:
 
-	composer global require "laravel/installer=~1.1"
+	composer global require "laravel/installer"
 
 Assicurati di aggiungere la directory `~/.composer/vendor/bin` nella variabile di sistema PATH della tua macchina, in modo che l'eseguibile `laravel` venga riconosciuto dal tuo sistema.
 
@@ -44,7 +44,7 @@ Una volta installato, usa il comando `laravel new` per creare una nuova installa
 
 Puoi anche installare Laravel usando il comando `create-project` di Composer da terminale:
 
-	composer create-project laravel/laravel --prefer-dist
+	composer create-project --prefer-dist laravel/laravel blog
 
 <a name="configurazione"></a>
 ## Configurazione
